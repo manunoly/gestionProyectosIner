@@ -9,10 +9,32 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'moment': 'vendor/moment/moment.js',
+  '@angular2-material': 'vendor/@angular2-material',
+  'ng2-bootstrap': 'vendor/ng2-bootstrap'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'moment': {
+    format: 'cjs'
+  }, 
+   'ng2-bootstrap': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'ng2-bootstrap.js'
+  },
+    '@angular2-material/core': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'core.js'
+  },
+  '@angular2-material/checkbox': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'checkbox.js'
+  },
+
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

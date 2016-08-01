@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import * as moment from 'moment';
+import { MdCheckbox } from '@angular2-material/checkbox';
+import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
+
 
 @Component({
   moduleId: module.id,
   selector: 'app-root',
   templateUrl: 'app.component.html',
+  directives: [MdCheckbox,AlertComponent],
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
