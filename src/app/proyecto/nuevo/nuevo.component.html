@@ -1,0 +1,131 @@
+<div>
+  <alert dismissible="true" type="info">
+    <p>Si su navegar esta en un lenguaje diferente al Español o no reconoce la correccion ortográfica.</p>
+    <p>Click derecho sobre un campo de texto. Luego en preferencia del lenguaje según su navegador seleccione el lenguaje Español</p>
+    <p>Asegúrese tener marcada la opcion de verificación de ortografía. Mas ayuda: <a target="_blank" href="https://support.google.com/toolbar/answer/146786?hl=es">Chorme aqui</a>.
+      <a target="_blank" href="https://support.mozilla.org/es/kb/usar-el-corrector-ortografico">Firefox aqui</a>.</p>
+  </alert>
+  {{diagnostic}}
+  <!--
+  <div class="row col-md-offset-1" *ngIf="submitted">
+    <h3>El Proyecto <a routerLink="/proyecto">{{ model.nombre }}</a> fue salvado correctamente.</h3>
+    <button type="button .col-md-offset-2" class="btn btn-default" (click)="volver()">Regresar</button>
+  </div>
+  <div *ngIf="!submitted">
+    <h2 class="hidden-xs hidden-sm text-primary">FICHA TÉCNICA DE POSTULACIÓN INTERNA DE PROYECTOS</h2>
+    <h2 class="visible-xs visible-sm text-primary">FICHA TÉCNICA</h2>
+    <hr>
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #fichaTecnicaForm="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre de la iniciativa</label>
+        <input type="text" spellcheck="true" placeholder="El nombre va de acuerdo al objetivo general y tiene que ser lo más corto que se pueda"
+          class="form-control" required [(ngModel)]="model.nombre" name="nombre" #nombre="ngModel">
+        <div [hidden]="nombre.valid || nombre.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+
+      <div class="form-form row">
+        <div class="col-sm-4">
+          <label for="montoRefencial">Monto referencial</label>
+          <input type="number" placeholder="Escribir el monto total del proyecto" class="form-control" required [(ngModel)]="model.montoRefencial"
+            name="montoRefencial" #montoRefencial="ngModel">
+          <div [hidden]="montoRefencial.valid || montoRefencial.pristine" class="alert alert-danger">
+            Este Campo es Requerido
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <label for="montoPrimerAnno">Monto 1er año</label>
+          <input type="number" placeholder="Escriba el monto que obtuvo para el primer año" class="form-control" required [(ngModel)]="model.montoPrimerAnno"
+            name="montoPrimerAnno" #montoPrimerAnno="ngModel">
+          <div [hidden]="montoPrimerAnno.valid || montoPrimerAnno.pristine" class="alert alert-danger">
+            Este Campo es Requerido
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="moneda">Moneda</label>
+            <select class="form-control" required [(ngModel)]="model.moneda" name="moneda" #moneda="ngModel">
+                            <option *ngFor="let p of monedas" [value]="p">{{p}}</option>
+                        </select>
+            <div [hidden]="moneda.valid || moneda.pristine" class="alert alert-danger">
+              Este Campo es Requerido
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="lugarEjecucion">Lugar de ejecución</label>
+        <input type="text" spellcheck="true" class="form-control" required [(ngModel)]="model.lugarEjecucion" name="lugarEjecucion"
+          #lugarEjecucion="ngModel">
+        <div [hidden]="lugarEjecucion.valid || lugarEjecucion.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="problema">Problema</label>
+        <textarea spellcheck="true" spellcheck="true" class="form-control" style="resize:vertical" placeholder="Empiece por identificar el problema central. 
+Defina de forma amplia las causas que originan este problema. 
+Considere los efectos generales del problema identificado. 
+Defina el enfoque del proyecto en base a las causas que estén más estrechamente relacionadas entre sí (de esto parte el alcance del proyecto)."
+          rows="6" required [(ngModel)]="model.problema" name="problema" #problema="ngModel"></textarea>
+        <div [hidden]="problema.valid || problema.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="justificacion">Justificación</label>
+        <textarea spellcheck="true" class="form-control" style="resize:vertical" placeholder="Tomando en cuenta el problema identificado, describa qué se debería hacer o qué acciones  se debería emprender para combatir las causas que lo generan y cómo esto ayudará a mitigar (o eliminar) los efectos.  
+Delimite los efectos en base al enfoque y alcance del proyecto. Considere además las competencias institucionales.     
+Describa por qué es importante realizar el proyecto.  Qué pasaría si se deja de hacer el proyecto y cómo esto afectaría a la matriz productiva, al cambio de matriz energética, cómo se afecta la economía del país, etc."
+          rows="6" required [(ngModel)]="model.justificacion" name="justificacion" #justificacion="ngModel"></textarea>
+        <div [hidden]="justificacion.valid || justificacion.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="objetivoGeneral">Objetivo general</label>
+        <textarea spellcheck="true" class="form-control" style="resize:vertical" placeholder="El objetivo general es el enunciado de lo que se considera posible alcanzar, respecto al problema.  
+El objetivo general debe ser claro, delimitado geográficamente y debe mostrar una cualidad del proyecto." rows="4" required
+          [(ngModel)]="model.objetivoGeneral" name="objetivoGeneral" #objetivoGeneral="ngModel"></textarea>
+        <div [hidden]="objetivoGeneral.valid || objetivoGeneral.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="componentes">Componentes</label>
+        <textarea spellcheck="true" spellcheck="true" class="form-control" style="resize:vertical" placeholder="Un componente es el conjunto de actividades que generará un producto. El producto a su vez contribuirá a conseguir el objetivo general.  
+Tomar en cuenta los componentes homologados a partir de 2016" rows="4" required [(ngModel)]="model.componentes" name="componentes"
+          #componentes="ngModel"></textarea>
+        <div [hidden]="componentes.valid || componentes.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="aporteCientifico">Descripción aporte científico – tecnológico</label>
+        <textarea spellcheck="true" class="form-control" style="resize:vertical" placeholder="Un componente es el conjunto de actividades que generará un producto.  
+El producto a su vez contribuirá a conseguir el objetivo general.  
+
+Tomar en cuenta los componentes homologados a partir de 2016" rows="6" required [(ngModel)]="model.aporteCientifico" name="aporteCientifico"
+          #aporteCientifico="ngModel"></textarea>
+        <div [hidden]="aporteCientifico.valid || aporteCientifico.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="resultados"> Resultados </label>
+        <textarea spellcheck="true" class="form-control" style="resize:vertical" placeholder="Describa los resultados esperados en función de la resolución del problema.
+Describa los resultados esperados en función del aporte científico tecnológico." rows="4" required [(ngModel)]="model.resultados"
+          name="resultados" #resultados="ngModel"></textarea>
+        <div [hidden]="resultados.valid || resultados.pristine" class="alert alert-danger">
+          Este Campo es Requerido
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <button type="submit" class="btn btn-primary" style="margin-right: 1.5em;" [disabled]="!fichaTecnicaForm.form.valid">Guardar</button>
+        <button type="button" class="btn btn-warning" (click)="limpiar()">Limpiar</button>
+      </div>
+    </form>-->
+  </div>

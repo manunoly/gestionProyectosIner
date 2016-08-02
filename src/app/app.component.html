@@ -1,7 +1,42 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <ul class="nav nav-pills pull-right" style="background-color: rgba(0,0,0,0.01)">
+    <li role="presentation"><a routerLink="/inicio" routerLinkActive="active">Inicio</a></li>
+    <li role="presentation" class="visible-xs visible-sm" (click)="$event.preventDefault()">
+      <!-- Proyecto -->
+      <a class="dropdown-toggle" data-toggle="dropdown" dropdown (onToggle)="toggled($event)" role="button" aria-haspopup="true"
+        aria-expanded="false">
+        <div href id="proyecto" dropdownToggle>
+          Proyecto <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" dropdownMenu aria-labelledby="proyecto">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/nuevo-proyecto" routerLinkActive="active">Nuevo</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/evaluar-proyecto" routerLinkActive="active">Evaluar</a></li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/listar-proyectos" routerLinkActive="active">Listar Proyectos</a></li>
+        </ul>
+      </a>
+    </li>
+    <li role="presentation" class="hidden-xs hidden-sm"><a routerLink="/nuevo-proyecto" routerLinkActive="active">Nuevo Proyecto</a></li>
+    <li role="presentation" class="hidden-sm hidden-xs"><a routerLink="/evaluar-proyecto" routerLinkActive="active">Evaluar Proyecto</a></li>
+    <li role="presentation" class="hidden-sm hidden-xs"><a routerLink="/listar-proyectos" routerLinkActive="active">Listar Proyectos</a></li>
+    <li role="presentation" (click)="$event.preventDefault()">
+      <!-- Reportes -->
+      <a class="dropdown-toggle" data-toggle="dropdown" dropdown (onToggle)="toggled($event)" role="button" aria-haspopup="true"
+        aria-expanded="false">
+        <div href id="reportes" dropdownToggle>
+          Reportes <span class="caret"></span>
+        </div>
+        <ul class="dropdown-menu" dropdownMenu aria-labelledby="reportes">
+          <li role="menuitem"><a class="dropdown-item" routerLink="/reporte" routerLinkActive="active">Reporte 1</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/reporte" routerLinkActive="active">Reporte 2</a></li>
+          <li role="menuitem"><a class="dropdown-item" routerLink="/reporte" routerLinkActive="active">Reporte 3</a></li>
+        </ul>
+      </a>
+    </li>
+  </ul>
+</div>
 
-<md-checkbox>chequea</md-checkbox>
-
-<alert type="info">ng2-bootstrap hello world!</alert>
+<!-- Routed views go here -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
