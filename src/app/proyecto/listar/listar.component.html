@@ -1,3 +1,36 @@
-<p>
-  listar works!
-</p>
+<div>
+  <h2 class="text-primary">Listado de Proyectos</h2>
+  <hr>
+
+  <table class="table table-bordred table-striped table-responsive">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Estado</th>
+        <th>Nombre</th>
+        <th class="hidden-sm hidden-xs">Lugar de ejecucion</th>
+        <th>Monto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let item of proyectos">
+      <!--<td><button (click)="proyectoDetalle(item)">ver</button></td>-->
+      <td class="col-md-1">
+        <a data-placement="top" data-toggle="tooltip" title="Editar"><button class="btn btn-primary btn-xs" data-title="Edit"><span class="glyphicon glyphicon-pencil"></span></button></a>
+        <a data-placement="top" data-toggle="tooltip" title="Elimiar"><button class="btn btn-danger btn-xs" data-title="Delete"><span class="glyphicon glyphicon-trash"></span></button></a>
+      </td>
+      <td class="col-md-2">{{item.estado}}</td>
+      <!--<td class="col-md-4"><a [routerLink]="['/proyecto/:id']">{{item.nombre}}</a></td>-->
+      <td class="col-md-4 hidden-sm hidden-xs">{{item.lugarEjecucion | slice:0:10}}</td>
+      <td class="col-md-1"> {{item.montoRefencial}}</td>
+      <td class="col-md-1"> <a>Más</a></td>
+      <td class="sr-only">{{item.montoPrimerAnno}}</td>
+      <td class="sr-only">{{item.problema}}</td>
+      <td class="sr-only">{{item.justificacion}}</td>
+      <td class="sr-only">{{item.objetivoGeneral}}</td>
+      <td class="sr-only">{{item.componentes}}</td>
+      <td class="sr-only">{{item.aporteCientifico}}</td>
+      <td class="sr-only">{{item.resultados}}</td>
+    </tr>
+  </table>
+</div>

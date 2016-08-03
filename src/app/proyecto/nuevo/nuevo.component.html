@@ -5,8 +5,8 @@
     <p>Asegúrese tener marcada la opcion de verificación de ortografía. Mas ayuda: <a target="_blank" href="https://support.google.com/toolbar/answer/146786?hl=es">Chorme aqui</a>.
       <a target="_blank" href="https://support.mozilla.org/es/kb/usar-el-corrector-ortografico">Firefox aqui</a>.</p>
   </alert>
-  {{diagnostic}}
-  <!--
+  <!--{{diagnostic}}-->
+
   <div class="row col-md-offset-1" *ngIf="submitted">
     <h3>El Proyecto <a routerLink="/proyecto">{{ model.nombre }}</a> fue salvado correctamente.</h3>
     <button type="button .col-md-offset-2" class="btn btn-default" (click)="volver()">Regresar</button>
@@ -124,8 +124,9 @@ Describa los resultados esperados en función del aporte científico tecnológic
       </div>
 
       <div class="pull-right">
-        <button type="submit" class="btn btn-primary" style="margin-right: 1.5em;" [disabled]="!fichaTecnicaForm.form.valid">Guardar</button>
-        <button type="button" class="btn btn-warning" (click)="limpiar()">Limpiar</button>
+        <button title="Envia el proyecto para su postulación. Debe llenar todos los campos para poder postular su proyecto" type="submit" class="btn btn-primary" style="margin-right: 1.5em;" [disabled]="!fichaTecnicaForm.form.valid">Enviar</button>
+        <button title="Guarda el proyecto para posterior edición sin realizar la postulación" class="btn btn-info" style="margin-right: 1.5em;">Guardar</button>
+        <button title="Limpia todos los campos del formulario de postulación" type="button" class="btn btn-warning" (click)="limpiar()">Limpiar</button>
       </div>
-    </form>-->
+    </form>
   </div>

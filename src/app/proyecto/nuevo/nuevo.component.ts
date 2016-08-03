@@ -3,7 +3,7 @@ import { Proyecto } from '../proyecto';
 import { NgForm } from '@angular/forms';
 import { AlertComponent } from 'ng2-bootstrap/ng2-bootstrap';
 import { ROUTER_DIRECTIVES } from '@angular/router';
-import {CORE_DIRECTIVES} from '@angular/common';
+import { CORE_DIRECTIVES} from '@angular/common';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class NuevoComponent implements OnInit {
   }
   monedas = ['Dolares', 'Euros',
     'Yen Japonés'];
-  private model = new Proyecto();
+  model = new Proyecto();
   submitted = false;
   lenguaje: string = "";
   lenguajeM: boolean = false;
