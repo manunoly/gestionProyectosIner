@@ -5,6 +5,9 @@ import { ListarProyectosService } from '../listar-proyectos.service';
 import { Proyecto } from '../proyecto';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 
+/**TODO
+ * fix how to resolve the projects from file.
+ */
 
 @Component({
   moduleId: module.id,
@@ -18,13 +21,14 @@ export class ListarComponent implements OnInit {
   proyectos: Proyecto[];
   proyectoSeleccionado: Proyecto;
 
-  constructor(private _listarProyectos: ListarProyectosService) { }
+  constructor() { }
 
   ngOnInit() {
     this.listarProyectos();
   }
   listarProyectos() {
-    return this._listarProyectos.getProyectos().then(proyectos => this.proyectos = proyectos.slice());
+    return "OK";
+    // this._listarProyectos.getProyectos().then(proyectos => this.proyectos = proyectos.slice());
 
   }
 

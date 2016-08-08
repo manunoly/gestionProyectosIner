@@ -1,0 +1,210 @@
+<!--<body [ngStyle]="{'background-image': 'url(' + photo + ')'}">-->
+<h2 class="text-primary text-right" style="padding-top: 30px;"> Bienvenidos a la plataforma para el cálculo de ventilacion natural</h2>
+<hr style="padding-bottom: 10px;">
+<div class="col-xs-12 border_bottom">
+  <div class="col-md-offset-4 col-md-4 border">
+    <md-input tooltipPopupDelay='2000' tooltip='Superficie del suelo' type="number" placeholder="Suelo (m2)"></md-input>
+  </div>
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="Calor Interno (W/m2)" maxLength="100"></md-input>
+  </div>
+</div>
+<div class="col-xs-12 border_bottom">
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="Superfcie ventana (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superfcie ventana (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Abertura interior (m2)" maxLength="100"></md-input>
+  </div>
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="Factor de protección móvil" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Factor de protección móvil" maxLength="100"></md-input>
+  </div>
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="U ventana (W7m2K)"></md-input>
+    <md-input type="number" placeholder="U ventana (W7m2K)" maxLength="100"></md-input>
+  </div>
+
+</div>
+<div class="col-xs-12 border_bottom">
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Superficie Opaca (m2)" maxLength="100"></md-input>
+  </div>
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+    <md-input type="number" placeholder="Absorción solar" maxLength="100"></md-input>
+  </div>
+  <div class="col-md-4 border">
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+    <md-input type="number" placeholder="U (W/m2K)" maxLength="100"></md-input>
+  </div>
+</div>
+<div class="col-xs-12 border_bottom">
+  <md-input type="number" placeholder="Coeficiente de carga"></md-input>
+  <md-input type="number" placeholder="Coeficiente intermedio"></md-input>
+  <md-input type="number" placeholder="Coeficiente descarga"></md-input>
+  <md-input type="number" placeholder="Coef. presión entrada"></md-input>
+  <md-input type="number" placeholder="Coef. presión salida"></md-input>
+</div>
+<div class="col-xs-12 border_bottom">
+  <div class="col-md-3">
+    <h4>Radiación (MJ/m2)</h4>
+    <select class="form-control border_bottom">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <select class="form-control border_bottom">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <select class="form-control border_bottom">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <select class="form-control border_bottom">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+
+  </div>
+</div>
+<md-checkbox class="col-md-offset-8" (change)="avanzadas()">Opciones Avanzadas </md-checkbox>
+<div *ngIf="avanzada">
+  <h2 class="text-primary" style="padding-top: 5px;  padding-bottom: 5px;"> Opciones Avanzadas de configuración para el cálculo</h2>
+
+  <div class="col-xs-12 border_bottom">
+    <md-input type="number" value="7776000" placeholder="Período (s)"></md-input>
+    <md-input type="number" value="3888000" placeholder="Período (s)"></md-input>
+    <md-input type="number" value="900" placeholder="Densidad (kg/m3)"></md-input>
+    <md-input type="number" value="1000" placeholder="ce (J/kgK)"></md-input>
+    <md-input type="number" value="0.1" placeholder="e (m)"></md-input>
+    <md-input type="number" value="100" placeholder="Si (m2)"></md-input>
+  </div>
+  <div class="col-xs-12 border_bottom">
+    <div class="col-md-3 border">
+      <md-input type="number" value="0.8" placeholder="Factor de marco"></md-input>
+      <md-input type="number" value="0.8" placeholder="Factor de marco"></md-input>
+    </div>
+    <div class="col-md-3 border">
+      <md-input type="number" value="0.85" placeholder="Factor solar vidrio"></md-input>
+      <md-input type="number" value="0.85" placeholder="Factor solar vidrio"></md-input>
+    </div>
+    <div class="col-md-3 border">
+      <md-input type="number" value="1" placeholder="Factor Accesibilidad Solar"></md-input>
+      <md-input type="number" value="1" placeholder="Factor Accesibilidad Solar"></md-input>
+    </div>
+  </div>
+  <div class="col-xs-12 border_bottom">
+    <div class="col-md-3 border">
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+      <md-input type="number" value="0.04" placeholder="Rse (m2K/W)"></md-input>
+    </div>
+    <div class="col-md-3 border">
+      <md-input type="number" value="900" placeholder="densidad (kg/m3)"></md-input>
+      <md-input type="number" value="900" placeholder="densidad (kg/m3)"></md-input>
+      <md-input type="number" value="900" placeholder="densidad (kg/m3)"></md-input>
+      <md-input type="number" value="900" placeholder="densidad (kg/m3)"></md-input>
+      <md-input type="number" value="450" placeholder="densidad (kg/m3)"></md-input>
+      <md-input type="number" value="900" placeholder="densidad (kg/m3)"></md-input>
+    </div>
+    <div class="col-md-3 border">
+      <md-input type="number" value="2000" placeholder="ce (J/kgK)"></md-input>
+      <md-input type="number" value="2000" placeholder="ce (J/kgK)"></md-input>
+      <md-input type="number" value="2000" placeholder="ce (J/kgK)"></md-input>
+      <md-input type="number" value="2000" placeholder="ce (J/kgK)"></md-input>
+      <md-input type="number" value="600" placeholder="ce (J/kgK)"></md-input>
+      <md-input type="number" value="2000" placeholder="ce (J/kgK)"></md-input>
+    </div>
+    <div class="col-md-3 border">
+      <md-input type="number" value="0.2" placeholder="e (m)"></md-input>
+      <md-input type="number" value="0.2" placeholder="e (m)"></md-input>
+      <md-input type="number" value="0.2" placeholder="e (m)"></md-input>
+      <md-input type="number" value="0.2" placeholder="e (m)"></md-input>
+      <md-input type="number" value="0.15" placeholder="e (m)"></md-input>
+      <md-input type="number" value="0.2" placeholder="e (m)"></md-input>
+    </div>
+  </div>
+</div>
+<md-checkbox class="col-md-offset-8" (change)="mostrarCalculos()">Mostrar Cálculos </md-checkbox>
+<div *ngIf="mostrarCalculo">
+  <div class="col-xs-12 border_bottom">
+    <h3 class="text-primary" style="padding-top: 10px; padding-bottom: 10px;"> Cálculos de salida</h3>
+    <md-input disabled="" type="number" value="13608" placeholder="Ganancia Interna (MJ)"></md-input>
+    <md-input disabled="" type="number" value="1499,39" placeholder="Ganancia solar (MJ)"></md-input>
+    <md-input disabled="" type="number" value="1069,3" placeholder="Ganancia solar (MJ)"></md-input>
+    <md-input disabled="" type="number" value="1069,3" placeholder="U media (W/m2K)"></md-input>
+    <md-input disabled="" type="number" value="1069,3" placeholder="Ht (W/K)"></md-input>
+  </div>
+  <div class="col-xs-12 border_bottom">
+    <div class="">
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+      <md-input disabled="" type="number" value="1" placeholder="Ganancia solar (MJ)"></md-input>
+    </div>
+    <div class="col-sm-offset-8">
+      <h4 class="">Ganancia solar total (MJ)</h4>
+      <md-input disabled="" type="number" value="1069,3" placeholder=""></md-input>
+    </div>
+  </div>
+  <div class="col-xs-12 border_bottom">
+    <md-input md-block disabled="" type="number" value="1" placeholder="q(m3/s)"></md-input>
+    <md-input disabled="" type="number" value="1" placeholder="Hv(W/K)"></md-input>
+    <md-input disabled="" type="number" value="1" placeholder="Perdida térmica con ventilación (MJ)"></md-input>
+    <md-input disabled="" type="number" value="1" placeholder="Pérdida térmica sin ventilación (MJ)"></md-input>
+  </div>
+</div>
+<div class="col-xs-12 border_bottom">
+  <table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Necesidad Refrigeración (MJ)</th>
+        <th>Sin ventilación (MJ)</th>
+        <th>Mejora</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>{{var11}}</td>
+        <td>{{var12}}</td>
+        <td>{{var13}}</td>
+      </tr>
+      <tr>
+        <td>kWh</td>
+        <td>{{var21}}</td>
+        <td>{{var22}}</td>
+        <td>{{var23}}</td>
+      </tr>
+      <tr>
+        <td>kWh/m2</td>
+        <td>{{var31}}</td>
+        <td>{{var32}}</td>
+        <td>{{var33}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -8,7 +8,8 @@ export class ListarProyectosService {
   constructor() { }
 
   public getProyectos(){
-    return Promise.resolve(Proyectos);
+    return "OK";
+    // return Promise.resolve(Proyectos);
   }
 
 }

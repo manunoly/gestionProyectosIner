@@ -13,7 +13,15 @@ const map: any = {
   '@angular2-material': 'vendor/@angular2-material',
   'ng2-bootstrap': 'vendor/ng2-bootstrap'
 };
-
+// put the names of any of your Material components here
+/*const materialPkgs:string[] = [
+  'core',
+  'checkbox',
+  'input'
+];
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});*/
 /** User packages configuration. */
 const packages: any = {
   'moment': {
@@ -34,7 +42,11 @@ const packages: any = {
     defaultExtension: 'js',
     main: 'checkbox.js'
   },
-
+  '@angular2-material/input': {
+    format: 'cjs',
+    defaultExtension: 'js',
+    main: 'input.js'
+  },
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -66,6 +78,7 @@ const barrels: string[] = [
   'app/proyecto/detalles',
   'app/no-encontrado',
   'app/reporte',
+  'app/maximo',
   /** @cli-barrel */
 ];
 

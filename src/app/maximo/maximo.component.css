@@ -1,0 +1,19 @@
+body{
+    background: url() right top no-repeat ;
+    /*filter: alpha(opacity=10);*/
+    }
+body img{
+    opacity: 0.1;    
+}
+.border {
+  border-left: 1px #e4e4e4 solid;
+  /*padding: 20px;*/
+  border-radius: 0.1px;
+  /*box-shadow: 0 0 1px #ccc;*/
+  /*margin-right: 5px;*/
+}
+.border_bottom {
+  padding-bottom: 10px;
+  /*box-shadow: 0 0 1px #ccc;*/
+  /*margin-right: 5px;*/
+}
