@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Proyecto } from './proyecto';
-import { Proyectos } from './proyectos';
+import { PROYECTOS } from './proyectos';
 
 @Injectable()
 export class ListarProyectosService {
 
-  constructor() { }
-
-  public getProyectos(){
-    return "OK";
-    // return Promise.resolve(Proyectos);
+  getProyectos(): Promise<Proyecto[]> {
+    // return Proyectos;
+    return Promise.resolve(PROYECTOS);
   }
 
 }

@@ -21,15 +21,19 @@ export class ListarComponent implements OnInit {
   proyectos: Proyecto[];
   proyectoSeleccionado: Proyecto;
 
-  constructor() { }
+  constructor(private listarProyectoService?: ListarProyectosService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.listarProyectos();
   }
-  listarProyectos() {
-    return "OK";
-    // this._listarProyectos.getProyectos().then(proyectos => this.proyectos = proyectos.slice());
 
+  listarProyectos(): void {
+     
+     console.log(this.listarProyectoService.getProyectos().then(PROYECTOS => this.proyectos = PROYECTOS.slice()));
+    // this._linistarProyectoServ.getProyectos().then(proyectos => this.proyectos = proyectos.slice());
+    //.then(proyectos => this.proyectos = proyectos.slice());
   }
+
+  get verP() { return JSON.stringify(this.proyectos); }
 
 }

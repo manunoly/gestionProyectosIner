@@ -23,8 +23,8 @@ export class NuevoComponent implements OnInit {
       this.lenguajeM = true;
     }
   }
-  monedas = ['Dolares', 'Euros',
-    'Yen Japonés'];
+  monedas = ['$ - Dolares', '€ - Euros',
+    '¥ - Yen Japonés'];
   model = new Proyecto();
   submitted = false;
   lenguaje: string = "";
